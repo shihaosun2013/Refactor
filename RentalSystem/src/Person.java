@@ -42,4 +42,22 @@ public class Person {
     private String _name;
     private TelephoneNumber _officeTelePhone = new TelephoneNumber();
 
+    /*Before*/
+    // Avoid chaining!
+//    manager = john.getDepartment().getManager();
+    Department _department;
+
+    public Department getDepartment() {
+        return _department;
+    }
+
+    public void setDepartment(Department arg) {
+        _department = arg;
+    }
+
+    /*After*/
+    public Person getManager() {
+        return _department.getManager();
+    }
+//  manager = john.getManager();
 }
