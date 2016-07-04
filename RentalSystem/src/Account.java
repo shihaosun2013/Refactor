@@ -56,4 +56,38 @@ public class Account {
     public void set_daysOverdrawn(int _daysOverdrawn) {
         this._daysOverdrawn = _daysOverdrawn;
     }
+
+    /*Before*/
+//    private double _interestRate;
+//
+//    public double get_interestRate() {
+//        return _interestRate;
+//    }
+//
+//    public void set_interestRate(double _interestRate) {
+//        this._interestRate = _interestRate;
+//    }
+//    double interestForAmount_days(double amount, int days) {
+//        return _interestRate * amount * days / 365;
+//    }
+
+    // Step 1
+//    double interestForAmount_days(double amount, int days) {
+//        return _type.get_interestRate() * amount * days / 365;
+//    }
+
+    // Step 2
+    double interestForAmount_days(double amount, int days) {
+        return _type.interestForAmount_days(amount, days);
+    }
+
+    public double get_interestRate() {
+        return _type.get_interestRate();
+    }
+
+    public void set_interestRate(double _interestRate) {
+        _type.set_interestRate(_interestRate);
+    }
+
+
 }

@@ -2,6 +2,20 @@
  * Created by shihasun on 7/4/16.
  */
 public class AccountType {
+    public double get_interestRate() {
+        return _interestRate;
+    }
+
+    public void set_interestRate(double _interestRate) {
+        this._interestRate = _interestRate;
+    }
+
+    private double _interestRate;
+
+    double interestForAmount_days(double amount, int days) {
+        return get_interestRate() * amount * days / 365;
+    }
+
     boolean isPremium() {
         return true;
     }
