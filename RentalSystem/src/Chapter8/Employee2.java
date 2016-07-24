@@ -4,22 +4,28 @@ package Chapter8;
  * Created by shihasun on 7/24/16.
  */
 public class Employee2 {
-    private int _type;
-    static final int ENGINEER = 0;
-    static final int SALESMAN = 1;
-    static final int MANAGER = 2;
+    public int get_type() {
+        return _type.getTypeCode();
+    }
+
+    public void set_type(int type) {
+        _type = EmployeeType.newType(type);
+    }
+
+//    private int _type;
+    private EmployeeType _type;
 
     public Employee2(int _type) {
-        this._type = _type;
+        this._type = EmployeeType.newType(_type);
     }
 
     int payAmount() {
-        switch (_type) {
-            case ENGINEER:
+        switch (get_type()) {
+            case EmployeeType.ENGINEER:
                 return _monthlySalary;
-            case SALESMAN:
+            case EmployeeType.SALESMAN:
                 return _monthlySalary + _commission;
-            case MANAGER:
+            case EmployeeType.MANAGER:
                 return _monthlySalary + _bonus;
             default:
                 throw new RuntimeException("Incorrect Employee");
