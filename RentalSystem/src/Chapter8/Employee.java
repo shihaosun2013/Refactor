@@ -34,4 +34,6 @@ abstract public class Employee {
                 throw new IllegalArgumentException("Incorrect type codevalue");
         }
     }
+
+    abstract int payAmount();
 }

@@ -9,4 +9,18 @@ public class Engineer extends Employee {
     int get_type() {
         return Employee.ENGINEER;
     }
+
+    @Override
+    int payAmount() {
+        return _monthlySalary;
+    }
+    private int _monthlySalary;
+
+    public int get_monthlySalary() {
+        return _monthlySalary;
+    }
+
+    public void set_monthlySalary(int _monthlySalary) {
+        this._monthlySalary = _monthlySalary;
+    }
 }

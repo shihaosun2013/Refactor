@@ -9,4 +9,27 @@ public class Manager extends Employee{
     int get_type() {
         return Employee.MANAGER;
     }
+
+    @Override
+    int payAmount() {
+        return _monthlySalary + _bonus;
+    }
+    private int _monthlySalary;
+    private int _bonus;
+
+    public int get_monthlySalary() {
+        return _monthlySalary;
+    }
+
+    public void set_monthlySalary(int _monthlySalary) {
+        this._monthlySalary = _monthlySalary;
+    }
+
+    public int get_bonus() {
+        return _bonus;
+    }
+
+    public void set_bonus(int _bonus) {
+        this._bonus = _bonus;
+    }
 }
