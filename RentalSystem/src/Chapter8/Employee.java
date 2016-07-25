@@ -19,6 +19,7 @@ abstract public class Employee {
     private Employee(int _type) {
         this._type = _type;
     }
+
     public Employee() {
     }
 
@@ -36,4 +37,53 @@ abstract public class Employee {
     }
 
     abstract int payAmount();
+
+    public void sendAlert() {
+
+    }
+
+    /*String foundMiscreant(String[] people) {
+        for (int i = 0; i < people.length; i++) {
+            if (people[i].equals("Don")) {
+                sendAlert();
+                return "Don";
+            }
+            if (people[i].equals("John")) {
+                sendAlert();
+                return "John";
+            }
+        }
+        return "";
+    }
+
+    void checkSecurity(String[] people) {
+        String found = foundMiscreant(people);
+//        someLaterCode(found);
+    }
+    */
+
+
+    String foundPerson(String[] people) {
+        for (int i = 0; i < people.length; i++) {
+            if (people[i].equals("Don")) {
+                return "Don";
+            }
+            if (people[i].equals("John")) {
+                return "John";
+            }
+        }
+        return "";
+    }
+
+    void sendAlert(String[] people) {
+        if (!foundPerson(people).equals(""))
+            sendAlert();
+    }
+
+    void checkSecurity(String[] people) {
+        sendAlert();
+        String found = foundPerson(people);
+//        someLaterCode(found);
+    }
+
 }
